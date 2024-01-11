@@ -1,0 +1,7 @@
+torch==1.11.*
+transformers==4.*
+gradio
+fastapi
+uvicorn
+gradio
+# Add other dependencies as needed
