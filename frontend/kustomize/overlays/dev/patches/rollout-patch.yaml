@@ -1,0 +1,8 @@
+- op: replace
+  path: /spec/template/spec/containers/0/image
+  value: "developementRegistry.azurecr.io/gradio-poc"
+
+
+- op: add 
+  path: /spec/revisionHistoryLimit
+  value: 2  

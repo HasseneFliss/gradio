@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: gradio-poc
+  namespace: gradio-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gradio-poc
+  template:
+    metadata:
+      labels:
+        app: gradio-poc
+    spec:
+      containers:
+      - name: gradio-poc
+        image: < ADD YOUR IMAGE REPO HERE >
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+  strategy:
+    blueGreen:
+      activeService: gradio-poc
+      previewService: gradio-poc-preview
+      autoPromotionEnabled: false

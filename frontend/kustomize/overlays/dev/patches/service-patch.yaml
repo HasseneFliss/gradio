@@ -1,0 +1,4 @@
+
+- op: replace 
+  path: /metadata/annotations/app.access.url
+  value: https://gradio-poc.dev-avaxialabs.com

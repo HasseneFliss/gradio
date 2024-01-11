@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: gradio-poc
+  name: gradio-poc
+  labels:
+    app: gradio-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gradio-poc
+  template:
+    metadata:
+      labels:
+        app: gradio-poc
+    spec:
+      containers:
+      - name: gradio-poc
+        image: < ADD YOUR IMAGE REPO HERE >
+        ports:
+        - containerPort: 5000
+        imagePullPolicy: Always
+        
